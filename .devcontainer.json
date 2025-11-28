@@ -3,4 +3,8 @@
   "service": "windows",
   "forwardPorts": [8006],
   "dockerComposeFile": "compose.yml"
-}
+}docker network create -d macvlan \
+    --subnet=192.168.0.0/24 \
+    --gateway=192.168.0.1 \
+    --ip-range=192.168.0.100\
+    -o parent=eth0 vlan
